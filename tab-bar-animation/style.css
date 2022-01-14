@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-primary: #FFE8E1;
+    --color-primary-dark: #473335;
+    --color-secondary: #FFFEFF;
+    
+}
+
+body {
+    background-color: var(--color-primary);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: grid;
+    place-items: center;
+}
+
+.tab-menu {
+    background-color: var(--color-secondary);
+    margin: 20% auto;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    border-radius: 50px;
+    box-shadow: 0px 40px 50px 5px #fcd1de;
+}
+
+/* Linear Transition */
+
+.tab-menu_item {
+    display: flex;
+    justify-content: space-between;
+    gap: .5rem;
+    align-items: center;
+    border-radius: 4rem;
+    color: var(--color-primary-dark);
+    font-size: 18px;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    transition: all 4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  
+} 
+
+.tab-menu_text {
+    font-size: 15px;  
+    display: none;
+    font-weight: bold;    
+}
+
+.tab-menu_active {
+    color: var(--color-primary-dark);
+    padding: .75rem 2rem;
+    background-color: var(--color-primary);
+}
+
+.tab-menu_active .tab-menu_text {
+    display: block;
+}
+
+/* Pulse Animation */
+
+span{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.tab-menu_icon:active {
+    animation: pulse 2s ease-out; 
+} 
+
+@keyframes pulse 
+{
+    0% {
+        box-shadow: 0px 0px 0px 0px var(--color-primary-dark), 
+                    0px 0px 0px 0px var(--color-primary-dark);
+
+    }
+    100% {
+        box-shadow: 0px 0px 0px .15em var(--color-primary-dark),
+                0px 0px 0px .15em var(--color-primary-dark);
+        transform: scale(9.5);
+    }
+} 
+
+/* Media Query */
+
+@media (max-width: 600px) {
+    .tab-menu {
+        padding: 1.5rem 1rem;
+    }
+
+    .tab-menu_item {
+        padding: .3rem .5rem;
+        margin: 0;
+    }
+    i {
+        font-size: 1em;
+    }
+    .tab-menu_text {
+        font-size: 12.5px;
+        position: relative;
+        top: 4px;
+        right: 5px
+    }
+ 
+    
+@media (max-width: 400px) {
+    .tab-menu {
+        padding: 1.25rem .65rem;
+    }
+
+    .tab-menu_item {
+        padding: .2rem .35rem;
+        margin: 0;
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
