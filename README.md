@@ -1,3 +1,3 @@
 # Toluwap
 
-A tab bar animation with pulse effect and smooth linear transition
+An animated tab bar created with HTML, CSS and JavaScript that creates a pulse effect and linear transition on click.
